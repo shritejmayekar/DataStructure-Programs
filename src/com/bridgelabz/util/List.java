@@ -7,19 +7,19 @@ import java.util.Scanner;
  *
  * @author Shritej
  */
-class NodeList<E>{
-    public E data;
+class NodeList<T>{
+    public T data;
     public NodeList link;
     NodeList() {
         //data=0;
         link=null;
     }
-    NodeList(E value,NodeList link) {
+    NodeList(T value,NodeList link) {
         data=value;
         this.link=link;
     }
 }
-public class List<E>{
+public class List<T>{
     NodeList start;
     NodeList end;
     public int size;
@@ -28,7 +28,7 @@ public class List<E>{
         start=null;
         size=0;
     }
-    public boolean search(E value) {
+    public boolean search(T value) {
     	NodeList traverse=start;
     	int position=0;
     	if(start==null) {
@@ -58,7 +58,7 @@ public class List<E>{
     	return false;
     }
     
-    public void insertAtFirst(E value) {
+    public void insertAtFirst(T value) {
         NodeList ptr=new NodeList(value,null);
         size++;
         if(start==null) {
@@ -90,7 +90,7 @@ public class List<E>{
         }
         System.out.print(nptr.data+" \n");
     }
-    public void insertAtEnd(E value) {
+    public void insertAtEnd(T value) {
         NodeList nnptr=new NodeList(value,null);
         size++;
         if(start==null) {
@@ -154,7 +154,7 @@ public class List<E>{
         }
         size--;
     }
-    public void insertAtPos(E value,int pos) {
+    public void insertAtPos(T value,int pos) {
         if(pos>size) {
             System.out.println("impossible");
             return;
