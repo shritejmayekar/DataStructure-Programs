@@ -72,13 +72,15 @@ public class Queue<E> {
         
     }
     /* Remove elements from the Queue */
-    public void Dequee() {
+    public Object Dequee() {
 	if(front==null) {
 		System.out.println("queue is empty");
-		return;
+		return null;
 	}
+		NodeQueue temporary=front;
         front=front.link;
         size--;
+        return temporary.data;
     }
     
 }
