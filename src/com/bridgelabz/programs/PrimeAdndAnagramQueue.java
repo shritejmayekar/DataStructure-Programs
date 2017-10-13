@@ -2,11 +2,10 @@ package com.bridgelabz.programs;
 
 import com.bridgelabz.util.Util;
 
-public class PrimeNumberIn2DArray {
+public class PrimeAdndAnagramQueue {
 
 	public static void main(String[] args) {
-		Util.primeNumber(0,200);
-		Util.print();
+		Util.anagram(0, 1000);
 	}
 
 }

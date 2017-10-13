@@ -17,7 +17,8 @@ import java.util.Random;
  *
  ******************************************************************************/
 public class Util {
-
+ public static int[][] array=new int[25][2];
+ public static int k,l;
 /**
 	 * 
 	 * @param string1
@@ -142,9 +143,21 @@ public class Util {
 		for(int i=low;i<high;i++) {
 			if(isPrime(i)) {
 				System.out.println(i);
+				if(i<100)
+					array[k++][0]=i;
+				if(i>100 && i<200)
+					array[l++][1]=i;
 			}
 		
 			}
+		}
+		public static void print() {
+			for(int i=0;i<k;i++)
+				System.out.print(array[i][0]+" ");
+			System.out.println();
+			for(int i=0;i<l;i++)
+				System.out.print(array[i][1]+" ");
+	
 		}
 			
 	/**
@@ -155,11 +168,16 @@ public class Util {
 		public static void anagramAndPallindrome(int low,int high) {
 			int []primeNumberArray=new int[high];
 			int k=0;
-			
+			int counter=0;
+			Stack<Integer> stackLeft=new Stack<Integer>();
+			Stack<Integer> stackRight=new Stack<Integer>();
+			Queue<Integer>  queueLeft=new Queue<>();
+			Queue<Integer>  queuerigth=new Queue<>();
 			for(int i=low;i<high;i++) {
 				if(isPrime(i))
 				{
 					primeNumberArray[k++]=i;
+				
 					
 				}
 			}
@@ -169,13 +187,64 @@ public class Util {
 				for(int j=1;j<k;j++) {
 					if(primeNumberArray[i]!=primeNumberArray[j])
 						if(isAnagram(primeNumberArray[i], primeNumberArray[j]))
-							if(reverseNumber(primeNumberArray[i])==primeNumberArray[j])
+							if(reverseNumber(primeNumberArray[i])==primeNumberArray[j]) {
 								System.out.println(primeNumberArray[i]+" "+primeNumberArray[j]);
+								counter++;
+								stackLeft.push(primeNumberArray[i]);
+								stackRight.push(primeNumberArray[j]);
+								queueLeft.Enqueue(primeNumberArray[i]);
+								queuerigth.Enqueue(primeNumberArray[j]);
+							}
 				}
 			}
-				
-				
+			System.out.println("stack using");
+			for(int size=0;size<counter;size++)
+				System.out.println(stackLeft.pop() +" "+stackRight.pop());
+			System.out.println("Queue sing");
+			for(int size=0;size<counter;size++)
+				System.out.println(queueLeft.Dequee()+" "+queuerigth.Dequee());
 		}
+		
+		public static void anagram(int low,int high) {
+			int []primeNumberArray=new int[high];
+			int k=0;
+			int counter=0;
+			Stack<Integer> stackLeft=new Stack<Integer>();
+			Stack<Integer> stackRight=new Stack<Integer>();
+			Queue<Integer>  queueLeft=new Queue<>();
+			Queue<Integer>  queuerigth=new Queue<>();
+			for(int i=low;i<high;i++) {
+				if(isPrime(i))
+				{
+					primeNumberArray[k++]=i;
+				
+					
+				}
+			}
+			
+			System.out.println("=======Anagram And Pallindrome Number=====");
+			for(int i=0;i<k;i++) {
+				for(int j=1;j<k;j++) {
+					if(primeNumberArray[i]!=primeNumberArray[j])
+						if(isAnagram(primeNumberArray[i], primeNumberArray[j])) {
+							//if(reverseNumber(primeNumberArray[i])==primeNumberArray[j]) {
+								//System.out.println(primeNumberArray[i]+" "+primeNumberArray[j]);
+								counter++;
+								stackLeft.push(primeNumberArray[i]);
+								stackRight.push(primeNumberArray[j]);
+								queueLeft.Enqueue(primeNumberArray[i]);
+								queuerigth.Enqueue(primeNumberArray[j]);
+							}
+				}
+			}
+			System.out.println("stack using");
+			for(int size=0;size<counter;size++)
+				System.out.println(stackLeft.pop() +" "+stackRight.pop());
+			System.out.println("Queue sing");
+			for(int size=0;size<counter;size++)
+				System.out.println(queueLeft.Dequee()+" "+queuerigth.Dequee());
+		}
+		
 	/**
 	 * pallindromeCheckerByqueue method uses queue concept to check pallindrome or not
 	 * @param stringInput
