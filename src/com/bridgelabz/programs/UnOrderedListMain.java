@@ -1,8 +1,7 @@
 /******************************************************************************
- *  Compilation:  javac -d . com/bridgelabz/programs/UnOrderedList.java
- *  Execution:    java -cp bin com.bridgelabz.programs.UnOrderedList
  *  
- *  Purpose: To take input from file and search word in list if found than remove and if not found add to list
+ *  Purpose: To take input from file and search word in list if found than remove 
+ *  and if not found add to list
  *  			
  *  		
  *  			

@@ -1,3 +1,15 @@
+/******************************************************************************
+ *  
+ *  Purpose: To deposit and withdraw amount from bank using queue for person
+ *  	
+ *  		
+ *  			
+ *  			
+ *  @author  Shritej
+ *  @version 1.0
+ *  @since   03-10-2017
+ *
+ ******************************************************************************/
 package com.bridgelabz.programs;
 
 import java.util.Random;
@@ -34,30 +46,45 @@ public class BankingCashCounter {
 		Queue< Integer> personQueue=new Queue<>();
 		
 		int size=0;
-		System.out.println("please enter the size of queue");
-		size=scanner.nextInt();
-		for(int token=1;token<=size;token++) {
-			personQueue.Enqueue(token);
+		while(true) {
+			System.out.println("\n1.Enqueue\n2.Dequeue\n3.display\n4.exit\n5.size of queue\n");	
+			switch(scanner.nextInt()) 
+			{
 			
-		}
-		for(int token=1;token<=personQueue.size;token++) {
-			Random randdom=new Random();
-			cashBalance=randdom.nextInt(50000);
-			queue.Enqueue(cashBalance);
-			System.out.println("options\n 1.Withdraw\n 2.Deposit");
-			switch(scanner.nextInt()) {
-				case 1:System.out.println("the current balance is "+withdraw(scanner.nextInt()));
-					break;
-				case 2:	
-						System.out.println("amount deposited \n current balance="
-									+deposit(scanner.nextInt()));
-						break;
-				default:
-					System.out.println("invalid");
+			case 1:	System.out.print("Enter the value:");
+					queue.Enqueue(scanner.nextInt());	
+				break;
+			case 2:	System.out.println("Token no.:"+queue.Dequee());
+					Random randdom=new Random();
+					cashBalance=randdom.nextInt(50000);
+					System.out.println("options\n 1.Withdraw\n 2.Deposit");
+					
+					switch(scanner.nextInt()) {
+						case 1:System.out.println("the current balance is "+withdraw(scanner.nextInt()));
+							break;
+						case 2:	
+								System.out.println("amount deposited \n current balance="
+											+deposit(scanner.nextInt()));
+								break;
+						default:
+							System.out.println("invalid");
+					}
+					
+				break;
+			case 3:	queue.display();
+				break;
+			case 4:	System.exit(0);
+				break;
+			case 5:System.out.println("size of queue="+queue.size);
+				break;
+			default:
+				System.out.println("Inavalid choice");
+				break;
+
 			}
-			
+
+		            
 		}
-		
 
 	}
 

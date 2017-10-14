@@ -1,3 +1,17 @@
+/******************************************************************************
+ *  
+ *  Purpose: To add element in linked list in sorted manner.
+ *  			 i.e when you add element in list it will automatically
+ *  				sort itself
+ *  	
+ *  		
+ *  			
+ *  			
+ *  @author  Shritej
+ *  @version 1.0
+ *  @since   06-10-2017
+ *
+ ******************************************************************************/
 package com.bridgelabz.programs;
 
 import java.io.BufferedReader;
@@ -9,16 +23,12 @@ import java.util.Scanner;
 
 
 import com.bridgelabz.util.OrderedList;
-/**
- * 
- * @author Shritej
- *	@since 6-10-2017
- */
 
 public class OrderedListMain {
 	/*variable Declaration */
 	public static int searchValue;
 	public static String readString,stringdummy;
+	static   Scanner scanner=new Scanner(System.in);
 /**
  * 
  * @param args
@@ -55,7 +65,7 @@ public class OrderedListMain {
 		
     	/* Generic UnOrdered List */
     //	OrderedList<Integer> list=new OrderedList<Integer>();
-        Scanner scanner=new Scanner(System.in);
+      
         while(true) {
         	list.bubbleSort();
             System.out.println("1.Insert at first"

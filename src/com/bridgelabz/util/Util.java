@@ -3,8 +3,6 @@ package com.bridgelabz.util;
 
 import java.util.Random;
 /******************************************************************************
- *  Compilation:  javac -d . com/bridgelabz/programs/Util.java
- *  Execution:    java -cp bin com.bridgelabz.programs.Util
  *  
  *  Purpose: To perform different functionalities
  *  	
@@ -18,7 +16,7 @@ import java.util.Random;
  ******************************************************************************/
 public class Util {
  public static int[][] array=new int[25][2];
- public static int k,l;
+ public static int k,l,m,n,o;
 /**
 	 * 
 	 * @param string1
@@ -84,6 +82,46 @@ public class Util {
 			}
 			return false;
 		}
+		/**
+		 * isAnagram method to find two number as anagram
+		 * @param number1
+		 * @param number2
+		 * @return boolean (true or false) 
+		 */
+			public static boolean isAnagramNum(int number1,int number2) {
+				int i=0;
+				int k=0;
+				int counter=0;
+				int arrayNumberOne[]=new int[4];
+				int arrayNumberTwo[]=new int[4];
+				while(number1!=0||number2!=0) {
+					arrayNumberOne[i++]=number1%10;
+					arrayNumberTwo[k++]=number2%10;
+					number1=number1/10;
+					number2=number2/10;
+					
+				}
+				sort(arrayNumberOne);
+				sort(arrayNumberTwo);
+				for(int j=0;j<arrayNumberOne.length;j++) {
+					if(arrayNumberOne[i]==arrayNumberTwo[j])
+						counter++;
+				}
+				if(counter==arrayNumberOne.length)
+				return true;
+				return false;
+			}
+			public static void sort(int[] array) {
+				for(int i=0;i<array.length;i++) {
+					for (int j = i+1; j < array.length; j++) {
+						if(array[i]>array[j]) {
+							int temp=array[i];
+							array[i]=array[j];
+							array[j]=temp;
+						}
+					}
+				}
+			}
 	/**
 	 * findNumber method to find same digit present in other number
 	 * @param digit
@@ -147,6 +185,12 @@ public class Util {
 					array[k++][0]=i;
 				if(i>100 && i<200)
 					array[l++][1]=i;
+				if(i>200 && i<300)
+					array[m++][2]=i;
+				if(i> 300 && i<400)
+					array[n++][3]=i;
+				//if(i>400 && ji500)
+					
 			}
 		
 			}

@@ -1,6 +1,6 @@
 /******************************************************************************
  *  
- *  Purpose: To check string is pallindrome or not using queue
+ *  Purpose: To check prime and anagram number and list it
  *  			
  *  		
  *  			
@@ -12,23 +12,12 @@
  ******************************************************************************/
 package com.bridgelabz.programs;
 
-import java.util.Scanner;
-
 import com.bridgelabz.util.Util;
 
+public class PrimeAndAnagramQueue {
 
-
-public class PallindromeChecker {
-	public static String stringInput;
-	
 	public static void main(String[] args) {
-		
-		Scanner scanner=new Scanner(System.in);
-		System.out.println("please enter the name:");
-		stringInput=scanner.next();
-		Util.pallindromeCheckerByQueue(stringInput);
-		scanner.close();
-
+		Util.anagram(0, 1000);
 	}
 
 }
