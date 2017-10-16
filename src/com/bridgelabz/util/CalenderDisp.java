@@ -40,7 +40,7 @@ public class CalenderDisp {
 		    String mMonth[]={"","January","February","March","April","May",
 		            "June","July","August","September","October","November","December"};
 		    System.out.println(mMonth[month]+" "+year);
-		        
+		 
 		    int Month[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
 		        
 		    if(isLeap(year))
@@ -52,19 +52,67 @@ public class CalenderDisp {
 		    	 for (int j = 0; j < 7; j++) {
 		    		 if(spaceIn<space){
 		    			 System.out.print("     ");
+		    			
 		    			 spaceIn++;
 		                }
 		                else if(number<=Month[month]) {
 		                	System.out.print(number);
 		                	number++;
-		                	if(number<11)
+		                	if(number<11) {
 		                		System.out.print("    ");
-		                	else
+		                		
+		                	}
+		                	else {
 		                		System.out.print("   ");
+		                		
+		                	}
 		                }
 		            }
 		            System.out.println();
+		           
 		      }
+		    }
+		public static void displayCalenderLink(int month,int year) {
+			int space=dayOfWeek(month, year);
+		    String mMonth[]={"","January","February","March","April","May",
+		            "June","July","August","September","October","November","December"};
+		    System.out.println(mMonth[month]+" "+year);
+		    Queue<Object> list=new Queue<>();    
+		    int Month[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+		        
+		    if(isLeap(year))
+		    	Month[2]=29;
+		     System.out.println("Sun  Mon  Tue  Wed  Thu  Fri  Sat");
+		     int number=1;
+		     int spaceIn=0;
+		     for (int i = 0; i < 6; i++) {
+		    	 for (int j = 0; j < 7; j++) {
+		    		 if(spaceIn<space){
+		    			// System.out.print("     ");
+		    			 list.Enqueue("     ");
+		    			 spaceIn++;
+		                }
+		                else if(number<=Month[month]) {
+		                	//System.out.print(number);
+		                	list.Enqueue(number);
+		                	number++;
+		                	if(number<11) {
+		                	//	System.out.print("    ");
+		                		list.Enqueue("    ");
+		                	}
+		                	else {
+		                	//	System.out.print("   ");
+		                		list.Enqueue("   ");
+		                	}
+		                }
+		            }
+		           // System.out.println();
+		            list.Enqueue("\n");
+		      }
+		     
+		     for(int i=0;i<list.size*20;i++) {
+		    	System.out.print(list.Dequee());
+		     }
 		    }
 	public static void main(String[] args) {
 		

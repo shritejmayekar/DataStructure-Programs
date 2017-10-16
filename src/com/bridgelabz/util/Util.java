@@ -15,8 +15,8 @@ import java.util.Random;
  *
  ******************************************************************************/
 public class Util {
- public static int[][] array=new int[25][2];
- public static int k,l,m,n,o;
+ public static int[][] array=new int[25][10];
+ public static int k,l,m,n,o,p,q,r,s,t,counter;
 /**
 	 * 
 	 * @param string1
@@ -88,21 +88,19 @@ public class Util {
 		 * @param number2
 		 * @return boolean (true or false) 
 		 */
-			public static boolean isAnagramNum(int number1,int number2) {
-				int i=0;
-				int k=0;
+			/*public static boolean isAnagramNum(int number1,int number2) {
+				
 				int counter=0;
-				int arrayNumberOne[]=new int[4];
-				int arrayNumberTwo[]=new int[4];
+				Queue<Integer> q=new Queue<>();
+				Queue<Integer> q1=new Queue<>();
 				while(number1!=0||number2!=0) {
-					arrayNumberOne[i++]=number1%10;
-					arrayNumberTwo[k++]=number2%10;
+					q1.Enqueue(number1%10);
+					q.Enqueue(number2%10);
 					number1=number1/10;
 					number2=number2/10;
 					
 				}
-				sort(arrayNumberOne);
-				sort(arrayNumberTwo);
+				if()
 				for(int j=0;j<arrayNumberOne.length;j++) {
 					if(arrayNumberOne[i]==arrayNumberTwo[j])
 						counter++;
@@ -121,7 +119,7 @@ public class Util {
 						}
 					}
 				}
-			}
+			}*/
 	/**
 	 * findNumber method to find same digit present in other number
 	 * @param digit
@@ -189,19 +187,31 @@ public class Util {
 					array[m++][2]=i;
 				if(i> 300 && i<400)
 					array[n++][3]=i;
-				//if(i>400 && ji500)
-					
+				if(i>400 && i<500)
+					array[o++][4]=i;
+				if(i>500 && i<600)
+					array[p++][4]=i;
+				if(i>600 && i<700)
+					array[q++][4]=i;
+				if(i>700 && i<800)
+					array[r++][4]=i;
+				if(i>800 && i<900)
+					array[s++][4]=i;
+				if(i>900 && i<1000)
+					array[t++][4]=i;
+				counter++;
 			}
 		
 			}
 		}
 		public static void print() {
-			for(int i=0;i<k;i++)
-				System.out.print(array[i][0]+" ");
+			for(int i=0;i<25;i++) {
+				for(int j=0;j<10;j++) {
+					if(array[i][j]!=0)
+				System.out.print(array[i][j]+" ");
+				}
 			System.out.println();
-			for(int i=0;i<l;i++)
-				System.out.print(array[i][1]+" ");
-	
+			}
 		}
 			
 	/**
@@ -253,6 +263,7 @@ public class Util {
 			int []primeNumberArray=new int[high];
 			int k=0;
 			int counter=0;
+			Stack<Integer> stack=new Stack<Integer>();
 			Stack<Integer> stackLeft=new Stack<Integer>();
 			Stack<Integer> stackRight=new Stack<Integer>();
 			Queue<Integer>  queueLeft=new Queue<>();
@@ -268,10 +279,10 @@ public class Util {
 			
 			System.out.println("=======Anagram And Pallindrome Number=====");
 			for(int i=0;i<k;i++) {
-				for(int j=1;j<k;j++) {
+				for(int j=0;j<k;j++) {
 					if(primeNumberArray[i]!=primeNumberArray[j])
 						if(isAnagram(primeNumberArray[i], primeNumberArray[j])) {
-							//if(reverseNumber(primeNumberArray[i])==primeNumberArray[j]) {
+							if(reverseNumber(primeNumberArray[i])==primeNumberArray[j]) {
 								//System.out.println(primeNumberArray[i]+" "+primeNumberArray[j]);
 								counter++;
 								stackLeft.push(primeNumberArray[i]);
@@ -279,6 +290,7 @@ public class Util {
 								queueLeft.Enqueue(primeNumberArray[i]);
 								queuerigth.Enqueue(primeNumberArray[j]);
 							}
+						}
 				}
 			}
 			System.out.println("stack using");

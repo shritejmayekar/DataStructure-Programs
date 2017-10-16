@@ -54,7 +54,12 @@ public class BankingCashCounter {
 			case 1:	System.out.print("Enter the value:");
 					queue.Enqueue(scanner.nextInt());	
 				break;
-			case 2:	System.out.println("Token no.:"+queue.Dequee());
+			case 2:	if(queue.size==0) {
+					System.out.println("queue empty");
+						return;
+					}
+					System.out.println("Token no.:"+queue.Dequee());
+					
 					Random randdom=new Random();
 					cashBalance=randdom.nextInt(50000);
 					System.out.println("options\n 1.Withdraw\n 2.Deposit");
