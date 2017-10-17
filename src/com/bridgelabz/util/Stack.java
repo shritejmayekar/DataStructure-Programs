@@ -93,6 +93,8 @@ public class Stack<E> {
         System.out.print("|"+nptr.data+"|\n ");
         
     }
+    
+    
    
     
     

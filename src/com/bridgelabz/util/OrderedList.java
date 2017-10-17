@@ -199,6 +199,12 @@ public class OrderedList<T> {
 				}
 			}
 		}
+	    public boolean isEmpty() {
+	    	if(start==null) {
+	    		return true;
+	    	}
+	    	return false;
+	    }
 	    
 	   
 }

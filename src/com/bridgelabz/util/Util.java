@@ -1,7 +1,11 @@
 
 package com.bridgelabz.util;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Random;
+import java.util.Scanner;
 /******************************************************************************
  *  
  *  Purpose: To perform different functionalities
@@ -88,38 +92,25 @@ public class Util {
 		 * @param number2
 		 * @return boolean (true or false) 
 		 */
-			/*public static boolean isAnagramNum(int number1,int number2) {
+			public static boolean isAnagramNum(int number1,int number2) {
 				
-				int counter=0;
+				int counter=0,i=0;
+				int pos=position(number1);
+				int array[]=new int[pos];
 				Queue<Integer> q=new Queue<>();
 				Queue<Integer> q1=new Queue<>();
-				while(number1!=0||number2!=0) {
-					q1.Enqueue(number1%10);
-					q.Enqueue(number2%10);
-					number1=number1/10;
-					number2=number2/10;
+				while(number1!=0) {
 					
+					array[i++]=number1%10;
+					number1=number1/10;
 				}
-				if()
-				for(int j=0;j<arrayNumberOne.length;j++) {
-					if(arrayNumberOne[i]==arrayNumberTwo[j])
-						counter++;
-				}
-				if(counter==arrayNumberOne.length)
-				return true;
+				/*for(int j=0;j<array.length;i++) {
+					counter=array[j]+counter*10;
+					counter1=array[k]+counter1*10;
+					counter2=array[l/mid++]=array*10
+				}*/
 				return false;
 			}
-			public static void sort(int[] array) {
-				for(int i=0;i<array.length;i++) {
-					for (int j = i+1; j < array.length; j++) {
-						if(array[i]>array[j]) {
-							int temp=array[i];
-							array[i]=array[j];
-							array[j]=temp;
-						}
-					}
-				}
-			}*/
 	/**
 	 * findNumber method to find same digit present in other number
 	 * @param digit
@@ -506,6 +497,59 @@ public class Util {
 		public static int randomGenerator() {
 			Random random=new Random();
 			return random.nextInt(100);
+		}
+	/**
+	 * hashMap method will put values in slot according to remainder of number 
+	 * 	slots are 0-10
+	 */
+		public static void hashMap() {
+			LinkedList<Integer> list;
+			Scanner scanner=new Scanner(System.in);
+			Random random=new Random();
+			
+			ArrayList<Integer> arrayList=new ArrayList<>();
+			for(int i=0;i<15;i++) {
+				arrayList.add(random.nextInt(30));
+			}
+			
+			System.out.println(arrayList);
+			HashMap<Integer,LinkedList<Integer>> hashMap=new HashMap<>();
+			for(Integer integer:arrayList) {
+				System.out.println(integer);
+				int slot=integer%11;
+				list=hashMap.get(slot);
+				if( list == null )
+				{
+					//System.out.println("Value is null");
+					list = new LinkedList<>();
+					hashMap.put(slot, list);
+				}
+				
+				//System.out.println("Value is not null");
+				list.add(integer);
+			}
+			System.out.println(hashMap);
+			System.out.println("Enter Number you want to search ");
+			int num = scanner.nextInt();
+			int SlotNumber= num%11;
+
+			list = hashMap.get(SlotNumber);
+			System.out.println(list);
+			System.out.println(list);
+			if(list.contains(num))
+			{
+				System.out.println("Number is present \nshould be delete");
+				System.out.println(list.pop()+" is poped");
+			}
+			else
+			{
+				System.out.println(num+" is not present \nshould be push");
+				int slot=num%11;
+				list=hashMap.get(slot);
+				list.add(num);
+			}
+			
+			System.out.println(hashMap);
 		}
 		public static void main(String args[]) {
 		dayOfWeek(10,5,2017);

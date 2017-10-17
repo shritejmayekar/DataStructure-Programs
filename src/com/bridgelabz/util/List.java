@@ -184,5 +184,11 @@ public class List<T>{
         size++;
        
     }
+    public boolean isEmpty() {
+    	if(start==null) {
+    		return true;
+    	}
+    	return false;
+    }
 }
 
