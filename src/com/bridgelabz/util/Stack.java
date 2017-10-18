@@ -83,16 +83,17 @@ public class Stack<E> {
             return;
             
         }
-        Node nptr=top;
+        Node newReferenece=top;
         System.out.println("|"+top.data+"|");
-        nptr=top.link;
-        while(nptr.link!=null) {
-            System.out.println("|"+nptr.data+"|");
-            nptr=nptr.link;
+        newReferenece=top.link;
+        while(newReferenece.link!=null) {
+            System.out.println("|"+newReferenece.data+"|");
+            newReferenece=newReferenece.link;
         }
-        System.out.print("|"+nptr.data+"|\n ");
+        System.out.print("|"+newReferenece.data+"|\n ");
         
     }
+   
     
     
    

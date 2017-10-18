@@ -77,7 +77,7 @@ public class CalenderDisp {
 		    String mMonth[]={"","January","February","March","April","May",
 		            "June","July","August","September","October","November","December"};
 		    System.out.println(mMonth[month]+" "+year);
-		    Queue<Object> list=new Queue<>();    
+		    Queue<Object> queue=new Queue<>();    
 		    int Month[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
 		        
 		    if(isLeap(year))
@@ -89,30 +89,31 @@ public class CalenderDisp {
 		    	 for (int j = 0; j < 7; j++) {
 		    		 if(spaceIn<space){
 		    			// System.out.print("     ");
-		    			 list.Enqueue("     ");
+		    			 queue.Enqueue("     ");
 		    			 spaceIn++;
 		                }
 		                else if(number<=Month[month]) {
 		                	//System.out.print(number);
-		                	list.Enqueue(number);
+		                	queue.Enqueue(number);
 		                	number++;
 		                	if(number<11) {
 		                	//	System.out.print("    ");
-		                		list.Enqueue("    ");
+		                		queue.Enqueue("    ");
 		                	}
 		                	else {
 		                	//	System.out.print("   ");
-		                		list.Enqueue("   ");
+		                		queue.Enqueue("   ");
 		                	}
 		                }
 		            }
 		           // System.out.println();
-		            list.Enqueue("\n");
+		            queue.Enqueue("\n");
 		      }
 		     
-		     for(int i=0;i<list.size*20;i++) {
-		    	System.out.print(list.Dequee());
-		     }
+		   
+		     while(!queue.isEmpty())
+		    	System.out.print(queue.Dequee());
+		 
 		    }
 	public static void main(String[] args) {
 		

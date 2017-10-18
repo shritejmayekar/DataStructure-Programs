@@ -59,21 +59,21 @@ public class List<T>{
     }
     
     public void insertAtFirst(T value) {
-        NodeList ptr=new NodeList(value,null);
+        NodeList reference=new NodeList(value,null);
         size++;
         if(start==null) {
-            start=ptr;
+            start=reference;
             
         }
         else {
-            ptr.link=start;
-            start=ptr;
+            reference.link=start;
+            start=reference;
         }
         
     }
     public void display() {
         System.out.println("linked list");
-        NodeList nptr=start;
+        NodeList reference=start;
         if(size==0) {
             System.out.println("empty");
             return;
@@ -83,12 +83,12 @@ public class List<T>{
             return;
         }
         System.out.print(start.data+" -> ");
-        nptr=nptr.link;
-        while(nptr.link!=null) {
-            System.out.print(nptr.data+" -> ");
-            nptr=nptr.link;
+        reference=reference.link;
+        while(reference.link!=null) {
+            System.out.print(reference.data+" -> ");
+            reference=reference.link;
         }
-        System.out.print(nptr.data+" \n");
+        System.out.print(reference.data+" \n");
     }
     public void insertAtEnd(T value) {
         NodeList nnptr=new NodeList(value,null);
@@ -167,18 +167,18 @@ public class List<T>{
             insertAtEnd(value);
             return;
         }
-        NodeList ptr=start;
-        NodeList nptr=new NodeList(value,null);
+        NodeList reference=start;
+        NodeList newReference=new NodeList(value,null);
         for(int i=1;i<=size;i++) {
             if(i==pos) {
                 
-                NodeList temp=ptr.link;
-                ptr.link=nptr;
-                nptr.link=temp;
+                NodeList temp=reference.link;
+                reference.link=newReference;
+                newReference.link=temp;
                 break;
                 
             }
-            ptr=ptr.link;
+            reference=reference.link;
             
         }
         size++;

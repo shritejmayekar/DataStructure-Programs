@@ -52,15 +52,15 @@ public class OrderedList<T> {
 	    }
 	    
 	    public void insertAtFirst(T value) {
-	        NodeOrdered ptr=new NodeOrdered(value,null);
+	        NodeOrdered reference=new NodeOrdered(value,null);
 	        size++;
 	        if(start==null) {
-	            start=ptr;
+	            start=reference;
 	            
 	        }
 	        else {
-	            ptr.link=start;
-	            start=ptr;
+	            reference.link=start;
+	            start=reference;
 	        }
 	        
 	    }
@@ -164,18 +164,18 @@ public class OrderedList<T> {
 	            insertAtEnd(value);
 	            return;
 	        }
-	        NodeOrdered ptr=start;
-	        NodeOrdered nptr=new NodeOrdered(value,null);
+	        NodeOrdered reference=start;
+	        NodeOrdered newReference=new NodeOrdered(value,null);
 	        for(int i=1;i<=size;i++) {
 	            if(i==pos) {
 	                
-	                NodeOrdered temp=ptr.link;
-	                ptr.link=nptr;
-	                nptr.link=temp;
+	                NodeOrdered temp=reference.link;
+	                reference.link=newReference;
+	               newReference.link=temp;
 	                break;
 	                
 	            }
-	            ptr=ptr.link;
+	            reference=reference.link;
 	            
 	        }
 	        size++;

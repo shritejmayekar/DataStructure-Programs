@@ -30,7 +30,7 @@ public class StackPushPop {
 		}
 	
 		stack.display();
-		if(counterOpening==counterClosing)
+		if(counterOpening==counterClosing && stack.isEmpty())
 			System.out.println("balanced equation");
 		else
 			System.out.println("not balanced equation");

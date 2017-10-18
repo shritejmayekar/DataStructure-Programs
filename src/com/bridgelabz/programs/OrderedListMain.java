@@ -80,48 +80,54 @@ public class OrderedListMain {
                     + "\n10.Exit"
                     + "\n11.sort"
                     + "\n12.search\n");
-            switch(scanner.nextInt()) {
-                case 1: System.out.print("Enter value:");
-                        list.insertAtFirst(scanner.nextInt());
-                        break;
-                case 2: System.out.print("Enter value:");
-                        list.insertAtEnd(scanner.nextInt());
-                    
-                        break;
-                case 3: System.out.print("Enter value and position");
-                        list.insertAtPos(scanner.nextInt(),scanner.nextInt());
-                       
-                        break;
-                case 4: list.deleteAtFirst();
-                	
-                        break;
-                case 5: list.deleteAtEnd();
-                	
-                        break;
-                case 6: list.display();
-                        break;
-                case 7: list.deletByPosition(scanner.nextInt());
-                	
-                        break;
-                case 8: System.out.println("size:"+list.size);
-                        break;
-                case 9:
-                		System.out.println("Enter value to search");
-                		System.out.println("present:"+list.search(scanner.nextInt()));
-                		list.bubbleSort();
-                		break;
-                
-                case 10: System.exit(0);
-                		break;
-                case 11:list.bubbleSort();
-                		break;
-                case 12:searchValue=scanner.nextInt();
-                		System.out.println("value present:"+list.search(searchValue));
-                		list.bubbleSort();
-                		break;
-                default: System.out.println("Invalid choice");
-                         break;
-            }
+            try {
+				switch(scanner.nextInt()) {
+				    case 1: System.out.print("Enter value:");
+				            list.insertAtFirst(scanner.nextInt());
+				            break;
+				    case 2: System.out.print("Enter value:");
+				            list.insertAtEnd(scanner.nextInt());
+				        
+				            break;
+				    case 3: System.out.print("Enter value and position");
+				            list.insertAtPos(scanner.nextInt(),scanner.nextInt());
+				           
+				            break;
+				    case 4: list.deleteAtFirst();
+				    	
+				            break;
+				    case 5: list.deleteAtEnd();
+				    	
+				            break;
+				    case 6: list.display();
+				            break;
+				    case 7: list.deletByPosition(scanner.nextInt());
+				    	
+				            break;
+				    case 8: System.out.println("size:"+list.size);
+				            break;
+				    case 9:
+				    		System.out.println("Enter value to search");
+				    		System.out.println("present:"+list.search(scanner.nextInt()));
+				    		list.bubbleSort();
+				    		break;
+				    
+				    case 10: System.exit(0);
+				    		break;
+				    case 11:list.bubbleSort();
+				    		break;
+				    case 12:searchValue=scanner.nextInt();
+				    		System.out.println("value present:"+list.search(searchValue));
+				    		list.bubbleSort();
+				    		break;
+				    default: System.out.println("Invalid choice");
+				             break;
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.exit(0);
+			}
         }
         
     }

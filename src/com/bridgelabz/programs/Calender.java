@@ -1,3 +1,7 @@
+
+package com.bridgelabz.programs;
+
+import com.bridgelabz.util.CalenderDisp;
 /******************************************************************************
  *  Purpose: To take month and uyear as an command-line argument and display 
  *  			Calendar
@@ -10,15 +14,16 @@
  *  @since   03-10-2017
  *
  ******************************************************************************/
-package com.bridgelabz.programs;
-
-import com.bridgelabz.util.CalenderDisp;
-
 public class Calender {
 	public static int month,year;
 	public static void main(String[] args) {
-		 month=Integer.parseInt(args[0]);
-		 year=Integer.parseInt(args[1]);
+		 try {
+			month=Integer.parseInt(args[0]);
+			 year=Integer.parseInt(args[1]);
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 
 		 CalenderDisp.displayCalender(month, year);
 
