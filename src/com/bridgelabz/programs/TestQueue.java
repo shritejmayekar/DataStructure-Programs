@@ -3,12 +3,24 @@ package com.bridgelabz.programs;
 import java.util.Scanner;
 
 import com.bridgelabz.util.Queue;
-
+/******************************************************************************
+ *  
+ *  Purpose: To implement user defined generic queue
+ *  			
+ *  		
+ *  			
+ *  			
+ *  @author  Shritej
+ *  @version 1.0
+ *  @since   06-10-2017
+ *
+ ******************************************************************************/
 
 public class TestQueue {
+	static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
     Queue<Integer> queue=new Queue<Integer>();
-	Scanner scanner=new Scanner(System.in);
+	
 	while(true) {
 	System.out.println("\n1.Enqueue\n2.Dequeue\n3.display\n4.exit\n");	
 		try {

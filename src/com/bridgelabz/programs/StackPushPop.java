@@ -5,7 +5,18 @@ import java.util.Scanner;
 import javax.tools.ToolProvider;
 
 import com.bridgelabz.util.Stack;
-
+/******************************************************************************
+ *  
+ *  Purpose: To check balanced parenthesis in expression
+ *  			
+ *  		
+ *  			
+ *  			
+ *  @author  Shritej
+ *  @version 1.0
+ *  @since   06-10-2017
+ *
+ ******************************************************************************/
 public class StackPushPop {
 	public static Character ch;
 	public static int counterOpening,counterClosing;

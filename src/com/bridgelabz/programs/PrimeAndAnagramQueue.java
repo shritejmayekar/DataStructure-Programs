@@ -1,3 +1,7 @@
+
+package com.bridgelabz.programs;
+
+import com.bridgelabz.util.Util;
 /******************************************************************************
  *  
  *  Purpose: To check prime and anagram number and list it
@@ -10,10 +14,6 @@
  *  @since   06-10-2017
  *
  ******************************************************************************/
-package com.bridgelabz.programs;
-
-import com.bridgelabz.util.Util;
-
 public class PrimeAndAnagramQueue {
 
 	public static void main(String[] args) {

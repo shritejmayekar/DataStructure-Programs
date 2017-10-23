@@ -297,6 +297,63 @@ public class Util {
 		for(int size=0;size<counter;size++)
 			System.out.println(queueLeft.Dequee()+" "+queuerigth.Dequee());
 	}
+	public static int[] digitConvert(int number) {
+		int[] digit=new int[3];
+		int k=0;
+		while(number!=0) {
+			digit[k++]=number%10;
+			number=number/10;
+		}
+		
+		return digit;
+	}
+	public static boolean  isAnagramForNumber(int number1,int number2) {
+		
+		int[] arrayOne=digitConvert(number1);
+		int[] arrayTwo=digitConvert(number2);
+			bubbleSort(arrayOne);
+			bubbleSort(arrayTwo);
+		for (int i = 0; i < arrayTwo.length; i++) {
+			if(arrayOne[i]!=arrayTwo[i])
+				return false;
+		}
+		return true;
+	}
+	public static  void bubbleSort(int[] arrayOne) {
+		int temp;
+		for(int i=0;i<arrayOne.length;i++) {
+			for(int j=i+1;j<arrayOne.length;j++) {
+				if(arrayOne[i]>(arrayOne[j])) {
+					temp=arrayOne[j];
+					arrayOne[j]=arrayOne[i];
+					arrayOne[i]=temp;
+				}
+			}
+		}
+	}
+	public static void anagramAndPrimeGenerator(int low,int high) {
+		int[] array=new int[25];
+		int[] array2=new int[143];
+		int[] digit=new int[3];
+		int k=0,number,l=0;
+		for(int i=low;i<high;i++) {
+			if(Util.isPrime(i))
+				if(i<100)
+					array[k++]=i;
+				else
+					array2[l++]=i;
+		}
+		
+		for (int i = 0; i <array2.length; i++) {
+			for (int j = 0; j < array2.length; j++) {
+				if(Util.isAnagramForNumber(array2[i], array2[j])) {
+					if(array2[i]!=array2[j])
+						System.out.println(array2[i]+" "+array2[j]);
+				}
+			}
+			
+		}
+	}
 
 	/**
 	 * pallindromeCheckerByqueue method uses queue concept to check pallindrome or not
@@ -393,7 +450,7 @@ public class Util {
 
 	}
 	/**
-	 * 
+	 * temperatureConversionF method converts celsius to farenheit
 	 * @param temperature
 	 * @return
 	 */
@@ -401,7 +458,7 @@ public class Util {
 		return (temperature*9)/5+32;
 	}
 	/**
-	 * 
+	 * temperatureConversionC method converts farenheit to celsius
 	 * @param temperature
 	 * @return
 	 */
@@ -409,7 +466,7 @@ public class Util {
 		return (temperature-32)*5/9;
 	}
 	/**
-	 * 
+	 * monthlyPayment method will calculates monthly pay
 	 * @param principal
 	 * @param year
 	 * @param rate
@@ -463,10 +520,10 @@ public class Util {
 		return binary;
 
 	}
-/**
- * printBinaryTodecimal method will print print decimal number
- * @param binaryArrray
- */
+	/**
+	 * printBinaryTodecimal method will print print decimal number
+	 * @param binaryArrray
+	 */
 	public static void printBinaryTodecimal(int[] binaryArrray) {
 		int sum=0,bit=7;
 		for(int i=0;i<binaryArrray.length;i++) {
@@ -478,10 +535,10 @@ public class Util {
 		}
 		System.out.println("The decimal number="+sum);
 	}
-/**
- * swapNimble method will swap the nimble
- * @param binary
- */
+	/**
+	 * swapNimble method will swap the nimble
+	 * @param binary
+	 */
 	public static void swapNimble(String binary) {
 		int[] binaryBitArray=new int[8];
 		int[] swapNimbelArray=new int[8];

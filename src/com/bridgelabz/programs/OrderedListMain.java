@@ -1,3 +1,15 @@
+
+package com.bridgelabz.programs;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+import com.bridgelabz.util.OrderedList;
 /******************************************************************************
  *  
  *  Purpose: To add element in linked list in sorted manner.
@@ -12,18 +24,6 @@
  *  @since   06-10-2017
  *
  ******************************************************************************/
-package com.bridgelabz.programs;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
-
-
-import com.bridgelabz.util.OrderedList;
-
 public class OrderedListMain {
 	/*variable Declaration */
 	public static int searchValue;

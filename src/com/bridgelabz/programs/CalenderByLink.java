@@ -1,7 +1,18 @@
 package com.bridgelabz.programs;
 
 import com.bridgelabz.util.CalenderDisp;
-
+/******************************************************************************
+ *  Purpose: To take month and uyear as an command-line argument and display 
+ *  			Calendar
+ *  	
+ *  		
+ *  			
+ *  			
+ *  @author  Shritej
+ *  @version 1.0
+ *  @since   03-10-2017
+ *
+ ******************************************************************************/
 public class CalenderByLink {
 	public static int month,year;
 	public static void main(String[] args) {
