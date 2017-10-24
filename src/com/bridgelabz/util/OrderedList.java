@@ -13,8 +13,8 @@ class NodeOrdered<T>{
     }
 }
 public class OrderedList<T> {
-	 NodeOrdered start;
-	 NodeOrdered end;
+	 public	NodeOrdered start;
+	 public	NodeOrdered end;
 	    public int size;
 
 	    public OrderedList() {
