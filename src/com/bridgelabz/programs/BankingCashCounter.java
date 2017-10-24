@@ -20,7 +20,7 @@ import com.bridgelabz.util.Util;
 public class BankingCashCounter {
 	public static Queue<Integer> queue=new Queue<Integer>();
 	public static Integer cashBalance=1000;
-	static Scanner scanner=new Scanner(System.in);
+	public static Scanner scanner=new Scanner(System.in);
 	public static void main(String[] args) {
 		
 		Queue< Integer> personQueue=new Queue<>();
