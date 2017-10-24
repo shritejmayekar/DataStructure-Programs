@@ -23,10 +23,6 @@ public class BankingCashCounter {
 	public static Integer cashBalance=1000;
 	public static Scanner scanner=new Scanner(System.in);
 	public static void main(String[] args) {
-
-		Queue< Integer> personQueue=new Queue<>();
-
-		int size=0;
 		while(flag) {
 			System.out.println("\n1.Enqueue\n2.Dequeue\n3.display\n4.exit\n5.size of queue\n");	
 			try {
@@ -52,20 +48,17 @@ public class BankingCashCounter {
 					System.out.println("amount deposited \n current balance="
 							+Util.deposit(scanner.nextInt()));
 					break;
-				default:
-					System.out.println("invalid");
-				}
-
+				default:System.out.println("invalid");
 				break;
+				}
 				case 3:	queue.display();
 				break;
 				case 4:	flag=false;
 				break;
 				case 5:System.out.println("size of queue="+queue.size);
 				break;
-				default:
-					System.out.println("Inavalid choice");
-					break;
+				default:System.out.println("Inavalid choice");
+				break;
 
 				}
 			} catch (Exception e) {

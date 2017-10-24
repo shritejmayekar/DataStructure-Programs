@@ -1,9 +1,6 @@
 package com.bridgelabz.programs;
 
 import java.util.Scanner;
-
-import javax.tools.ToolProvider;
-
 import com.bridgelabz.util.Stack;
 /******************************************************************************
  *  
@@ -45,7 +42,7 @@ public class StackPushPop {
 			System.out.println("balanced equation");
 		else
 			System.out.println("not balanced equation");
-	
+		scanner.close();
 	}
 	
 }
