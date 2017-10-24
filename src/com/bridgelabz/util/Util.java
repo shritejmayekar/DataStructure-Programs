@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class Util {
 	public static int[][] array=new int[25][10];
 	public static int k,l,m,n,o,p,q,r,s,t,counter,cashBalance;
-	static Random randdom=new Random();
+	public static Random randdom=new Random();
 	//
 	/**
 	 * 
@@ -34,18 +34,18 @@ public class Util {
 		/* 
 		 * Remove space
 		 */
-		string1=string1.replaceAll("\\s","");
-		string2=string2.replaceAll("\\s","");
+		String wordOne=string1.replaceAll("\\s","");
+		String wordTwo=string2.replaceAll("\\s","");
 		/*
 		 * convert to lower case
 		 */
-		string1=string1.toLowerCase();
-		string2=string2.toLowerCase();
+		wordOne=wordOne.toLowerCase();
+		wordTwo=wordTwo.toLowerCase();
 		/*
 		 * String to char array conversion
 		 */
-		char chararray1[]=string1.toCharArray();
-		char chararray2[]=string2.toCharArray();
+		char chararray1[]=wordOne.toCharArray();
+		char chararray2[]=wordTwo.toCharArray();
 
 		if(chararray1.length!=chararray2.length){
 			return false;
@@ -61,9 +61,7 @@ public class Util {
 			}
 
 		}
-		if(counter==chararray1.length)
-			return true;	
-		return false;
+		return (counter==chararray1.length);
 	}
 	/**
 	 * isAnagram method to find two number as anagram
@@ -74,15 +72,15 @@ public class Util {
 	public static boolean isAnagram(int number1,int number2) {
 		int counter=0;
 		int temp=number1;
-		if(position(number1)==position(number2)) {
-			int digit=number1;
-			while(number1!=0) {
-				digit=number1%10;
+		if(position(temp)==position(number2)) {
+			int digit=temp;
+			while(temp!=0) {
+				digit=temp%10;
 				if(findNumber(digit, number2))
 					counter++;
-				number1=number1/10;
+				temp=temp/10;
 			}
-			if(counter==position(temp))
+			if(counter==position(number1))
 				return true;
 
 		}
@@ -96,21 +94,14 @@ public class Util {
 	 */
 	public static boolean isAnagramNum(int number1,int number2) {
 
-		int counter=0,i=0;
+		int i=0;
 		int pos=position(number1);
 		int array[]=new int[pos];
-		Queue<Integer> q=new Queue<>();
-		Queue<Integer> q1=new Queue<>();
 		while(number1!=0) {
 
 			array[i++]=number1%10;
 			number1=number1/10;
 		}
-		/*for(int j=0;j<array.length;i++) {
-					counter=array[j]+counter*10;
-					counter1=array[k]+counter1*10;
-					counter2=array[l/mid++]=array*10
-				}*/
 		return false;
 	}
 	/**
@@ -233,8 +224,8 @@ public class Util {
 		for(int i=0;i<k;i++) {
 			for(int j=1;j<k;j++) {
 				if(primeNumberArray[i]!=primeNumberArray[j])
-					if(isAnagram(primeNumberArray[i], primeNumberArray[j]))
-						if(reverseNumber(primeNumberArray[i])==primeNumberArray[j]) {
+					if(isAnagram(primeNumberArray[i], primeNumberArray[j])
+						&&(reverseNumber(primeNumberArray[i])==primeNumberArray[j])) {
 							System.out.println(primeNumberArray[i]+" "+primeNumberArray[j]);
 							counter++;
 							stackLeft.push(primeNumberArray[i]);
@@ -260,7 +251,6 @@ public class Util {
 		int []primeNumberArray=new int[high];
 		int k=0;
 		int counter=0;
-		Stack<Integer> stack=new Stack<Integer>();
 		Stack<Integer> stackLeft=new Stack<Integer>();
 		Stack<Integer> stackRight=new Stack<Integer>();
 		Queue<Integer>  queueLeft=new Queue<>();
@@ -278,25 +268,29 @@ public class Util {
 		for(int i=0;i<k;i++) {
 			for(int j=0;j<k;j++) {
 				if(primeNumberArray[i]!=primeNumberArray[j])
-					if(isAnagram(primeNumberArray[i], primeNumberArray[j])) {
-						if(reverseNumber(primeNumberArray[i])==primeNumberArray[j]) {
-							//System.out.println(primeNumberArray[i]+" "+primeNumberArray[j]);
+					if(isAnagram(primeNumberArray[i], primeNumberArray[j])
+						&&(reverseNumber(primeNumberArray[i])==primeNumberArray[j])) {
 							counter++;
 							stackLeft.push(primeNumberArray[i]);
 							stackRight.push(primeNumberArray[j]);
 							queueLeft.Enqueue(primeNumberArray[i]);
 							queuerigth.Enqueue(primeNumberArray[j]);
 						}
-					}
+					
 			}
 		}
-		System.out.println("stack using");
+		System.out.println("stack Using");
 		for(int size=0;size<counter;size++)
 			System.out.println(stackLeft.pop() +" "+stackRight.pop());
-		System.out.println("Queue sing");
+		System.out.println("Queue Using");
 		for(int size=0;size<counter;size++)
 			System.out.println(queueLeft.Dequee()+" "+queuerigth.Dequee());
 	}
+	/**
+	 * digitConvert method convert and sort number
+	 * @param number
+	 * @return
+	 */
 	public static int[] digitConvert(int number) {
 		int[] digit=new int[3];
 		int k=0;
@@ -304,21 +298,31 @@ public class Util {
 			digit[k++]=number%10;
 			number=number/10;
 		}
-		
+
 		return digit;
 	}
+	/**
+	 * isAnagramForNumber finds anagram for number
+	 * @param number1
+	 * @param number2
+	 * @return
+	 */
 	public static boolean  isAnagramForNumber(int number1,int number2) {
-		
+
 		int[] arrayOne=digitConvert(number1);
 		int[] arrayTwo=digitConvert(number2);
-			bubbleSort(arrayOne);
-			bubbleSort(arrayTwo);
+		bubbleSort(arrayOne);
+		bubbleSort(arrayTwo);
 		for (int i = 0; i < arrayTwo.length; i++) {
 			if(arrayOne[i]!=arrayTwo[i])
 				return false;
 		}
 		return true;
 	}
+	/**
+	 * bubbleSort method sorts by alphabetical order
+	 * @param arrayOne
+	 */
 	public static  void bubbleSort(int[] arrayOne) {
 		int temp;
 		for(int i=0;i<arrayOne.length;i++) {
@@ -331,6 +335,11 @@ public class Util {
 			}
 		}
 	}
+	/**
+	 * anagramAndPrimeGenerator method will generate prime and anagram
+	 * @param low
+	 * @param high
+	 */
 	public static void anagramAndPrimeGenerator(int low,int high) {
 		int[] array=new int[25];
 		int[] array2=new int[143];
@@ -343,7 +352,7 @@ public class Util {
 				else
 					array2[l++]=i;
 		}
-		
+
 		for (int i = 0; i <array2.length; i++) {
 			for (int j = 0; j < array2.length; j++) {
 				if(Util.isAnagramForNumber(array2[i], array2[j])) {
@@ -351,7 +360,7 @@ public class Util {
 						System.out.println(array2[i]+" "+array2[j]);
 				}
 			}
-			
+
 		}
 	}
 
@@ -408,9 +417,7 @@ public class Util {
 			temp=temp/10;
 
 		}		
-		if(number==reverseNumber)
-			return true;
-		return false;
+		return (number==reverseNumber);
 	}
 	/**
 	 * reversNumber method reverse the number
@@ -418,7 +425,6 @@ public class Util {
 	 * @return
 	 */
 	public static int reverseNumber(int number) {
-
 		int reverseNumberReturn=0;
 		int temp=number;
 		while(temp!=0) {
