@@ -525,7 +525,8 @@ public class Util {
 	 * @param binaryArrray
 	 */
 	public static void printBinaryTodecimal(int[] binaryArrray) {
-		int sum=0,bit=7;
+		int sum=0;
+		int bit=7;
 		for(int i=0;i<binaryArrray.length;i++) {
 			if(binaryArrray[i]==1) {
 				sum=(int) (sum+Math.pow(2, bit));

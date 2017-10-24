@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  *****************************************************************************/
 public class BinaryTree {
-	long treeNumber;
+	static long treeNumber;
 	/**
 	 * calculateBinaryTree method will calculate possible number of binary tree
 	 * @param nodes
@@ -40,7 +40,7 @@ public class BinaryTree {
 		//creating object of class 
 		BinaryTree binaryTree=new BinaryTree();
 		System.out.print("Enter the number of nodes:");
-		double treeNumber=binaryTree.calculateBinaryTree(scanner.nextInt());
+		treeNumber=(long) binaryTree.calculateBinaryTree(scanner.nextInt());
 		System.out.println("Binary tree can be possible:"+treeNumber);
 		scanner.close();
 	}

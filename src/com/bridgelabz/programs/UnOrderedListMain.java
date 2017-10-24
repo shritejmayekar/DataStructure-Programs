@@ -1,3 +1,14 @@
+
+package com.bridgelabz.programs;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+import com.bridgelabz.util.List;
 /******************************************************************************
  *  
  *  Purpose: To take input from file and search word in list if found than remove 
@@ -11,17 +22,6 @@
  *  @since   05-10-2017
  *
  ******************************************************************************/
-package com.bridgelabz.programs;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
-
-import com.bridgelabz.util.List;
-
 public class UnOrderedListMain {
 	public static String readString,stringdummy;
 	public static int size;
