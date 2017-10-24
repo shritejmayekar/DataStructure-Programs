@@ -190,10 +190,7 @@ public class List<T>{
 
 	}
 	public boolean isEmpty() {
-		if(start==null) {
-			return true;
-		}
-		return false;
+		return (start==null);
 	}
 }
 

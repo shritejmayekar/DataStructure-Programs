@@ -29,7 +29,7 @@ public class OrderedListMain {
 	public static int searchValue;
 	public static boolean flag=true;
 	public static String readString,stringdummy;
-	static   Scanner scanner=new Scanner(System.in);
+	public static   Scanner scanner=new Scanner(System.in);
 	/**
 	 * 
 	 * @param args
