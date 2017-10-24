@@ -149,9 +149,7 @@ public class Util {
 
 			}
 		}
-		if(counter==2)
-			return true;
-		return false;
+		return (counter==2);
 	}
 	/**
 	 * primeNumber method is extension of isPrime which give range of prime number
@@ -343,8 +341,8 @@ public class Util {
 	public static void anagramAndPrimeGenerator(int low,int high) {
 		int[] array=new int[25];
 		int[] array2=new int[143];
-		int[] digit=new int[3];
-		int k=0,number,l=0;
+		int k=0;
+		int l=0;
 		for(int i=low;i<high;i++) {
 			if(Util.isPrime(i))
 				if(i<100)
