@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  *****************************************************************************/
 public class BinaryTree {
-	static long treeNumber;
+	public static long treeNumber;
 	/**
 	 * calculateBinaryTree method will calculate possible number of binary tree
 	 * @param nodes
