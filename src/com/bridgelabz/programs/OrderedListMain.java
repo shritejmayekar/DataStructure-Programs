@@ -126,7 +126,7 @@ public class OrderedListMain {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				System.exit(0);
+				flag=false;
 			}
 		}
 
